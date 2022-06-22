@@ -41,7 +41,7 @@
 - SASS/Bulma
 - PostgreSQL
 
-Stretch Goal Technology
+Stretch Goal Technologies
 - Python
 - NLTK
 - Gensim
