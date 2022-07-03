@@ -8,7 +8,7 @@ const ShowProject = () => {
 //Asks the browser to fetch data, but wait until load to do so
     const getProjects = async () => {
     try{
-        const response = await fetch("http://localhost:3003/projects");
+        const response = await fetch("https://volhub-backend.herokuapp.com/projects");
         const jsonData = await response.json()
         setProjects(jsonData);
     } catch (err) {
