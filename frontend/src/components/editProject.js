@@ -5,11 +5,12 @@ const EditProject = ({ project }) => {
   const [projectlead, setProjectLead] = useState(project.projectlead);
   const [description, setDescription] = useState(project.description);
 
+  
   const onEditForm = async event => {
     event.preventDefault();
     try {
       const body = { organization, description, projectlead, };
-      const response = await fetch(`http://localhost:3003/projects/${project.project_id}`, {
+      const response = await fetch(`https://volhub-backend.herokuapp.com/projects/${project.project_id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)

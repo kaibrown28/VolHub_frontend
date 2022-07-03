@@ -9,7 +9,7 @@ const NewProject = () => {
     event.preventDefault();
     try {
       const body = { organization, description, projectlead, };
-      const response = await fetch("http://localhost:3003/projects", {
+      const response = await fetch("https://volhub-backend.herokuapp.com/projects", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
