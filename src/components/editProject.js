@@ -10,7 +10,7 @@ const EditProject = ({ project }) => {
     event.preventDefault();
     try {
       const body = { organization, description, projectlead, };
-      const response = await fetch(`https://volhub-backend.herokuapp.com/projects/${project.project_id}`, {
+      const response = await fetch(`localhost:3000/projects/${project.project_id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
