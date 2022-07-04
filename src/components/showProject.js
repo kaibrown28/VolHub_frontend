@@ -8,7 +8,7 @@ const ShowProject = () => {
 //Asks the browser to fetch data, but wait until load to do so
     const getProjects = async () => {
     try{
-        const response = await fetch(process.env.PG_HOST);
+        const response = await fetch("/projects/");
         const jsonData = await response.json()
         setProjects(jsonData);
     } catch (err) {
@@ -23,7 +23,7 @@ const ShowProject = () => {
 //Delete Project function
 const deleteProject = async (id) => {
     try{
-        const deleteProject = await fetch(`localhost:3000/projects/${id}`, {
+        const deleteProject = await fetch(`/projects/${id}`, {
             method:"DELETE"
         });
         setProjects(projects.filter(project => project.project_id !== id ))

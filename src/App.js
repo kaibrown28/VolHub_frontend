@@ -4,7 +4,7 @@ import React from 'react';
 
 //componenets
 import NewProject from "./components/newProject";
-import Example from "./components/example";
+
 import Login from "./components/login";
 import EditProject from './components/editProject';
 import ShowProject from "./components/showProject";

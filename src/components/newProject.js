@@ -9,7 +9,7 @@ const NewProject = () => {
     event.preventDefault();
     try {
       const body = { organization, description, projectlead, };
-      const response = await fetch("localhost:3000/projects", {
+      const response = await fetch("/projects", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
