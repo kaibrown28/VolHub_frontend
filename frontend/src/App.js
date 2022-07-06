@@ -4,20 +4,26 @@ import React from 'react';
 
 //componenets
 import NewProject from "./components/newProject";
-import Example from "./components/example";
-import Login from "./components/login";
-import EditProject from './components/editProject';
-import ShowProject from "./components/showProject";
+
+import ShowProject from './components/showProject';
+
+import NewVolunteer from './components/addVol';
+import ShowVolunteer from './components/showVol';
+// import editProject from "./components/editProject";
+// import showroject from "./components/showProject";
 
 
 function App() {
   return ( 
     <>
       <div className='container'>
-        <Login />
-        
         <NewProject />
         <ShowProject />
+        {/* <EditProject /> */}
+      </div>
+      <div className="container">
+        <NewVolunteer />
+        <ShowVolunteer />
       </div>
     </>
     
