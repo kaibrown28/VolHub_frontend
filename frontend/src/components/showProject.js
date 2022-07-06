@@ -23,7 +23,7 @@ const ShowProject = () => {
 //Delete Project function
 const deleteProject = async (id) => {
     try{
-        const deleteProject = await fetch(`localhost:5000/projects/${id}`, {
+        const deleteProject = await fetch(`http://localhost:5000/projects/${id}`, {
             method:"DELETE"
         });
         setProjects(projects.filter(project => project.project_id !== id ))

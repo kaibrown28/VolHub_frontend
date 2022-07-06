@@ -1,5 +1,6 @@
 // import  React, { Fragment } from "react";
 import React from 'react';
+import "./index.css";
 
 
 //componenets
@@ -16,6 +17,8 @@ import ShowVolunteer from './components/showVol';
 function App() {
   return ( 
     <>
+    <h1> Volunteer Hub</h1>
+    <h3> Connecting Organizations and Volunteers</h3>
       <div className='container'>
         <NewProject />
         <ShowProject />

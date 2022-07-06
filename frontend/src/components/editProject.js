@@ -9,14 +9,14 @@ const EditProject = ({ project }) => {
   const onEditForm = async event => {
     event.preventDefault();
     try {
-      const body = { organization, description, projectlead, };
+      const body = { organization, description, projectlead };
       const response = await fetch(`http://localhost:5000/projects/${project.project_id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       });
 
-      window.location = "/";
+    
     } catch (err) {
       console.error(err.message);
     }

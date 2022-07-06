@@ -23,7 +23,7 @@ const ShowVolunteer = () => {
 //Delete Project function
 const deleteVolunteer = async (id) => {
     try{
-        const deleteVolunteer= await fetch(`localhost:5000/volunteers/${id}`, {
+        const deleteVolunteer= await fetch(`http://localhost:5000/volunteers/${id}`, {
             method:"DELETE"
         });
         setVolunteers(volunteers.filter(volunteer => volunteer.volunteer_id !== id ))
@@ -37,20 +37,20 @@ const deleteVolunteer = async (id) => {
     <>
       <h1 className="text-center mt-5">Volunteer Pool</h1>
       {volunteers.map( volunteer => (
-      <div className="volunteerList" key={volunteer.volunteer_id}> 
-      <img className="volImg"></img>
-      <h4>First Name</h4>
-      <p>{volunteer.firstname}</p>
-      <h4>Last Name</h4>
-      <p>{volunteer.lastname}</p>
-      <h4>Your Skills</h4>
-      <p>{volunteer.skills}</p>
-      <h4>Your Interests</h4>
-      <p>{volunteer.interest}</p>
-      <br />
-
+        <div className="container">
+          
+      <div className="volunteerList card col-sm" key={volunteer.volunteer_id}> 
+      
+      <img className="volImg card-img-left" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" alt="image placeholder"></img>
+      <div className="card-body">
+        <h3 className="card-title">{volunteer.firstname} {volunteer.lastname}</h3>
+        <h4 className="volInfo">Skills</h4>
+        <p>{volunteer.skills}</p>
+        <h4 className="volInfo">Interests</h4>
+        <p>{volunteer.interests}</p>
       <button className="btn btn-danger"  onClick={() => deleteVolunteer(volunteer.volunteer_id)}>Remove Profile</button>
-      <hr />
+      </div>
+      </div>
       </div>
       ))}
     </>
