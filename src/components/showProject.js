@@ -8,7 +8,11 @@ const ShowProject = () => {
 //Asks the browser to fetch data, but wait until load to do so
     const getProjects = async () => {
     try{
+<<<<<<< HEAD:frontend/src/components/showProject.js
         const response = await fetch("http://localhost:5000/projects");
+=======
+        const response = await fetch("/projects/");
+>>>>>>> 06a7b14e267911c189430355ace7c8950ec3efa4:src/components/showProject.js
         const jsonData = await response.json()
         setProjects(jsonData);
     } catch (err) {
@@ -23,7 +27,11 @@ const ShowProject = () => {
 //Delete Project function
 const deleteProject = async (id) => {
     try{
+<<<<<<< HEAD:frontend/src/components/showProject.js
         const deleteProject = await fetch(`localhost:5000/projects/${id}`, {
+=======
+        const deleteProject = await fetch(`/projects/${id}`, {
+>>>>>>> 06a7b14e267911c189430355ace7c8950ec3efa4:src/components/showProject.js
             method:"DELETE"
         });
         setProjects(projects.filter(project => project.project_id !== id ))
