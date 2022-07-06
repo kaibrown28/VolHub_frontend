@@ -12,7 +12,7 @@ const Login = () => {
     const [loggedin, setLoggedin] = useState(false); 
   
 
-if (username == uname && password == upass) {
+if (username === uname && password === upass) {
     setLoggedin(true);
 }
     return(

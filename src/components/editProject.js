@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 
-const NewProject = () => {
-  const [organization, setOrganization] = useState("");
-  const [projectlead, setProjectLead] = useState("");
-  const [description, setDescription] = useState("");
+const EditProject = ({ project }) => {
+  const [organization, setOrganization] = useState(project.organization);
+  const [projectlead, setProjectLead] = useState(project.projectlead);
+  const [description, setDescription] = useState(project.description);
 
-  const onSubmitForm = async event => {
+  
+  const onEditForm = async event => {
     event.preventDefault();
     try {
       const body = { organization, description, projectlead, };
-      const response = await fetch("https://volhub-backend.herokuapp.com/projects", {
-        method: "POST",
+      const response = await fetch(`/projects/${project.project_id}`, {
+        method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       });
 
-      window.location = "/";
+      // window.location = "/";
     } catch (err) {
       console.error(err.message);
     }
@@ -23,15 +24,16 @@ const NewProject = () => {
 
   return (
     <>
-      <h1 className="text-center mt-5">Create a Project</h1>
-      <form className="d-flex mt-5" onSubmit={onSubmitForm}> 
+    <h1>Edit Project</h1>
+      <form className="d-flex mt-5" onSubmit={onEditForm}> 
         <input className="form-control" value={organization}onChange={event => setOrganization(event.target.value)}/>
         <input className="form-control" value={projectlead}onChange={event => setProjectLead(event.target.value)}/>
         <textarea className="form-control" value={description}onChange={event => setDescription(event.target.value)}/>
-        <button className="btn btn-success">Add</button>
+        <br />
+        <button className="btn btn-warning"  onClick={() => EditProject(project.project_id)}>Edit Project</button>
       </form>
     </>
   );
 };
 
-export default NewProject;
+export default EditProject;
