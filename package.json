@@ -2,16 +2,8 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
   "dependencies": {
     "@auth0/auth0-react": "^1.10.2",
-=======
-  "engines": {
-    "node": "16.14.2",
-    "npm": "8.5.0"
-  },
-  "dependencies": {
->>>>>>> 06a7b14e267911c189430355ace7c8950ec3efa4
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -26,13 +18,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-<<<<<<< HEAD
   "engines":{
     "node": "16.14.2",
     "npm" : "8.5.0"
   },
-=======
->>>>>>> 06a7b14e267911c189430355ace7c8950ec3efa4
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -51,11 +40,7 @@
       "last 1 safari version"
     ]
   },
-<<<<<<< HEAD
   "devDependencies": {
     "react-router-dom": "^6.3.0"
   }
-=======
-  "proxy": "http://localhost:5000"
->>>>>>> 06a7b14e267911c189430355ace7c8950ec3efa4
 }
